@@ -1,0 +1,24 @@
+#!/bin/bash
+git clone https://github.com/yahoo/CaffeOnSpark.git --recursive
+export CAFFE_ON_SPARK=$(pwd)/CaffeOnSpark
+
+pushd ${CAFFE_ON_SPARK}/caffe-public/
+cp Makefile.config.example Makefile.config
+echo "INCLUDE_DIRS += ${JAVA_HOME}/include" >> Makefile.config
+echo "CPU_ONLY := 1" >> Makefile.config
+echo "BLAS := atlas" >> Makefile.config
+echo "PYTHON_INCLUDE += /usr/lib/python2.7/dist-packages/numpy/core/include" >> Makefile.config
+echo "INCLUDE_DIRS += /usr/include/hdf5/serial/" >> Makefile.config
+echo "LIBRARY_DIRS += /usr/lib/x86_64-linux-gnu/hdf5/serial/" >> Makefile.config
+popd
+
+pushd ${CAFFE_ON_SPARK}
+make clean #clean up the environment before building (especially when rebuiding), or there will be errors such as "ailed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.7:run (proto) on project caffe-distri: An Ant BuildException has occured: exec returned: 2"
+make build
+popd
+export LD_LIBRARY_PATH=${CAFFE_ON_SPARK}/caffe-public/distribute/lib:${CAFFE_ON_SPARK}/caffe-distri/distribute/lib
+
+#ssh key without entering password
+ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
+cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/authorized_keys
