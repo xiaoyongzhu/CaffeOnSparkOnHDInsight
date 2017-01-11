@@ -12,6 +12,20 @@ echo "INCLUDE_DIRS += /usr/include/hdf5/serial/" >> Makefile.config
 echo "LIBRARY_DIRS += /usr/lib/x86_64-linux-gnu/hdf5/serial/" >> Makefile.config
 popd
 
+#install protobuf
+pushd ${CAFFE_ON_SPARK}
+wget https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz
+tar xzvf protobuf-2.5.0.tar.gz
+cd  protobuf-2.5.0
+./configure
+make
+make check
+sudo make install
+sudo ldconfig
+protoc --version 
+popd
+
+#compile CaffeOnSpark
 pushd ${CAFFE_ON_SPARK}
 #always clean up the environment before building (especially when rebuiding), or there will be errors such as "ailed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.7:run (proto) on project caffe-distri: An Ant BuildException has occured: exec returned: 2"
 make clean 
