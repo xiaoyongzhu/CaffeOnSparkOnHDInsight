@@ -9,8 +9,7 @@ sudo apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-d
 
 #install protobuf
 wget https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz
-tar xzvf protobuf-2.5.0.tar.gz -C /tmp
-cd /tmp/protobuf-2.5.0
+tar xzvf protobuf-2.5.0.tar.gz -C /tmp && cd /tmp/protobuf-2.5.0
 ./configure
 make
 make check
