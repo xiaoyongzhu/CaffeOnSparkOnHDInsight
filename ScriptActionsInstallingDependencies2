@@ -19,6 +19,6 @@ sudo make
 sudo make check
 sudo make install
 sudo ldconfig
-echo "protobuf installation done, version is"
-protoc --version 
+echo "protobuf installation done"
+#protoc --version 
 
