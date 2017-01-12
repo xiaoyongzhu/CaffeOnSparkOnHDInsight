@@ -23,6 +23,15 @@ make build
 popd
 export LD_LIBRARY_PATH=${CAFFE_ON_SPARK}/caffe-public/distribute/lib:${CAFFE_ON_SPARK}/caffe-distri/distribute/lib
 
+
+hadoop fs -mkdir -p wasb:///projects/machine_learning/image_dataset
+
+${CAFFE_ON_SPARK}/scripts/setup-mnist.sh
+hadoop fs -put -f ${CAFFE_ON_SPARK}/data/mnist_*_lmdb wasb:///projects/machine_learning/image_dataset/
+
+${CAFFE_ON_SPARK}/scripts/setup-cifar10.sh
+hadoop fs -put -f ${CAFFE_ON_SPARK}/data/cifar10_*_lmdb wasb:///projects/machine_learning/image_dataset/
+
 #ssh key without entering password
 ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
 cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
