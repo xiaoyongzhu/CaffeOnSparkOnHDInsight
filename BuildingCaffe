@@ -1,5 +1,5 @@
 
--j8#!/bin/bash
+#!/bin/bash
 git clone https://github.com/yahoo/CaffeOnSpark.git --recursive
 export CAFFE_ON_SPARK=$(pwd)/CaffeOnSpark
 
