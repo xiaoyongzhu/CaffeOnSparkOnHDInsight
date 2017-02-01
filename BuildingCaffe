@@ -1,3 +1,4 @@
+
 -j8#!/bin/bash
 git clone https://github.com/yahoo/CaffeOnSpark.git --recursive
 export CAFFE_ON_SPARK=$(pwd)/CaffeOnSpark
@@ -32,3 +33,8 @@ hadoop fs -put -f ${CAFFE_ON_SPARK}/data/mnist_*_lmdb wasb:///projects/machine_l
 ${CAFFE_ON_SPARK}/scripts/setup-cifar10.sh
 hadoop fs -put -f ${CAFFE_ON_SPARK}/data/cifar10_*_lmdb wasb:///projects/machine_learning/image_dataset/
 
+#put the already compiled CaffeOnSpark libraries to wasb storage, then read back to each node using script actions. This is because CaffeOnSpark requires all the nodes have the libarries
+hadoop fs -mkdir -p /CaffeOnSpark/caffe-public/distribute/lib/
+hadoop fs -mkdir -p /CaffeOnSpark/caffe-distri/distribute/lib/
+hadoop fs -put CaffeOnSpark/caffe-distri/distribute/lib/* /CaffeOnSpark/caffe-distri/distribute/lib/
+hadoop fs -put CaffeOnSpark/caffe-public/distribute/lib/* /CaffeOnSpark/caffe-public/distribute/lib/
