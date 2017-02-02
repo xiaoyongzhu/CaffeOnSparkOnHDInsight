@@ -159,12 +159,16 @@ For this example, since we are using CPU rather than GPU, we should change the l
     # solver mode: CPU or GPU
     solver_mode: CPU
 
+![Caffe Config](Caffe 1.PNG)
+
 You can change other lines as needed.
 
 The second file (${CAFFE_ON_SPARK}/data/lenet_memory_train_test.prototxt) defines how the neuron network looks like, and the relevant input and output file. We also need to update the file to reflect the training data location. Change the following part in lenet_memory_train_test.prototxt (you need to point to the right location specific to your cluster):
 
 - change the "file:/Users/mridul/bigml/demodl/mnist_train_lmdb" to "wasb:///projects/machine_learning/image_dataset/mnist_train_lmdb"
 - change "file:/Users/mridul/bigml/demodl/mnist_test_lmdb/" to "wasb:///projects/machine_learning/image_dataset/mnist_test_lmdb"
+
+![Caffe Config](Caffe 2.PNG)
 
 For more information on how to define the network, please check the [Caffe documentation](http://caffe.berkeleyvision.org/tutorial/)
 
