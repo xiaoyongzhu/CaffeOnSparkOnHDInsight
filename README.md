@@ -150,9 +150,9 @@ Caffe is using an "expressive architecture", where for composing a model, you ju
 
 The model we will train today is a sample model for MNIST training. The MNIST database of handwritten digits has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST. The digits have been size-normalized and centered in a fixed-size image. CaffeOnSpark has some scripts to download the dataset and convert it into the right format.
 
-CaffeOnSpark provides some network topologies example for MNIST training. There are two files required: 
+CaffeOnSpark provides some network topologies example for MNIST training. It has a nice design of splitting the network architecture (the topology of the network) and optimization. In this case, There are two files required: 
 
-the "configuration" file (${CAFFE_ON_SPARK}/data/lenet_memory_solver.prototxt) defines whether CPU or GPU will be used, what's the momentum, how many iterations will be, etc. It also defies which neuron network topology should the program use (which is the second file we need).
+the "Solver" file (${CAFFE_ON_SPARK}/data/lenet_memory_solver.prototxt) is used for overseeing the optimization and generating parameter updates. For example, it defines whether CPU or GPU will be used, what's the momentum, how many iterations will be, etc. It also defies which neuron network topology should the program use (which is the second file we need). For more information about Solver, please refer to [Caffe documentation](http://caffe.berkeleyvision.org/tutorial/solver.html).
 
 For this example, since we are using CPU rather than GPU, we should change the last line to:
 
