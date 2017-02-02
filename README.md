@@ -270,6 +270,6 @@ The SampleID represents the ID in the MNIST dataset, and the label is the number
 
 ## Conclusion
 
-In this blog, I walk you through installing CaffeOnSpark and we run a simple example. HDInsight is a full managed cloud distributed compute platform, and is the best place for running machine learning and advanced analytics workloads on large data set, such as [R Server on HDInsight](https://azure.microsoft.com/en-us/services/hdinsight/r-server/), [Spark ML](https://blogs.technet.microsoft.com/machinelearning/2016/06/09/end-to-end-data-science-using-spark-on-azure-hdinsight/), etc. For Distributed Deep Learning, we just demostrated the ability to run Caffe on HDInsgiht Spark, and we will have more to share in the future.
+In this blog, I walk you through installing CaffeOnSpark and we run a simple example. HDInsight is a full managed cloud distributed compute platform, and is the best place for running machine learning and advanced analytics workloads on large data set, such as [R Server on HDInsight](https://azure.microsoft.com/en-us/services/hdinsight/r-server/), [Spark ML](https://blogs.technet.microsoft.com/machinelearning/2016/06/09/end-to-end-data-science-using-spark-on-azure-hdinsight/), etc. For Distributed Deep Learning, we just demonstrated the ability to run Caffe on HDInsgiht Spark, and we will have more to share in the future.
 
 Feel free to drop any comments and feedbacks to xiaoyzhu at microsoft dot com, and pull requests for this blog is welcome!
