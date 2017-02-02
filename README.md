@@ -170,7 +170,7 @@ The second file (${CAFFE_ON_SPARK}/data/lenet_memory_train_test.prototxt) define
 
 ![Caffe Config](Caffe 2.png)
 
-For more information on how to define the network, please check the [Caffe documentation](http://caffe.berkeleyvision.org/tutorial/)
+For more information on how to define the network, please check the [Caffe documentation on MNIST dataset](http://caffe.berkeleyvision.org/gathered/examples/mnist.html)
 
 For the purpose of this blog, we just use this simple MNIST example. You should run the command below from the head node:
 
@@ -184,7 +184,7 @@ Since we are using YARN cluster mode, in which case the Spark driver will be sch
 
     17/02/01 23:22:16 INFO Client: Application report for application_1485916338528_0015 (state: RUNNING)
 
-If you want to know what happened, then you usually need to get the Spark driver's log, which has more information. In this case, you need to go to the YARN UI to find the relevant YARN logs. You can get the YARN UI by this URL: 
+If you want to know what happened, you usually need to get the Spark driver's log, which has more information. In this case, you need to go to the YARN UI to find the relevant YARN logs. You can get the YARN UI by this URL: 
 
     https://yourclustername.azurehdinsight.net/yarnui
    
