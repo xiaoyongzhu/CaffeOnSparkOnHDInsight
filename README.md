@@ -190,7 +190,7 @@ If you want to know what happened, then you usually need to get the Spark driver
    
 ![YARN UI](YARN UI 1.PNG)
 
-In this case, after clicking the "Scheduler" link, you can see that for this application, there are 9 containers running. We ask YARN to provide 8 executors, and another container is for driver process. 
+You can take a look at how many resources are allocated for this particular application. You can click the "Scheduler" link, and then you will see that for this application, there are 9 containers running. We ask YARN to provide 8 executors, and another container is for driver process. 
 
 ![YARN Scheduler](YARN Scheduler.png)
 
