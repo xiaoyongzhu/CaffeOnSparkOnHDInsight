@@ -183,10 +183,16 @@ Since we are using YARN cluster mode, in which case the Spark driver will be sch
 If you want to know what happened, then you usually need to get the Spark driver's log, which has more information. In this case, you need to go to the YARN UI to find the relevant YARN logs. You can get the YARN UI by this URL: 
 
     https://yourclustername.azurehdinsight.net/yarnui
+   
+![YARN UI](YARN UI 1.PNG)
 
 In this case, after clicking the "Scheduler" link, you can see that for this application, there are 9 containers running. We ask YARN to provide 8 executors, and another container is for driver process. 
 
+![YARN Scheduler](YARN Scheduler.png)
+
 You may want to check the  driver logs or container logs if there are failures. For driver logs, you can click the application ID in YARN UI, then click the "Logs" button. The driver logs are written into stderr.
+
+![YARN UI 2](YARN UI 2.PNG)
 
 For example, you might see some of the error below from the driver logs, indicating you allocate too many executors.
 
