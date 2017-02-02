@@ -159,7 +159,7 @@ For this example, since we are using CPU rather than GPU, we should change the l
     # solver mode: CPU or GPU
     solver_mode: CPU
 
-![Caffe Config](Caffe 1.PNG)
+![Caffe Config](Caffe 1.png)
 
 You can change other lines as needed.
 
@@ -168,7 +168,7 @@ The second file (${CAFFE_ON_SPARK}/data/lenet_memory_train_test.prototxt) define
 - change the "file:/Users/mridul/bigml/demodl/mnist_train_lmdb" to "wasb:///projects/machine_learning/image_dataset/mnist_train_lmdb"
 - change "file:/Users/mridul/bigml/demodl/mnist_test_lmdb/" to "wasb:///projects/machine_learning/image_dataset/mnist_test_lmdb"
 
-![Caffe Config](Caffe 2.PNG)
+![Caffe Config](Caffe 2.png)
 
 For more information on how to define the network, please check the [Caffe documentation](http://caffe.berkeleyvision.org/tutorial/)
 
